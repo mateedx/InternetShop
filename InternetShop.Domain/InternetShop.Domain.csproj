@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>InternetShop.Domain</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Remove="Class1.cs" />
+      <Compile Remove="Carts\Users\**" />
+      <Compile Remove="Users\Dto\CreateUserDto.cs" />
+      <Compile Remove="OrderProducts\**" />
+      <Compile Remove="CategoryVariations\**" />
+      <Compile Remove="ProductVariations\**" />
+      <Compile Remove="Carts\Dto\CartDto.cs" />
+      <Compile Remove="Products\Dto\AddProductDto.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Carts\Users\**" />
+      <EmbeddedResource Remove="OrderProducts\**" />
+      <EmbeddedResource Remove="CategoryVariations\**" />
+      <EmbeddedResource Remove="ProductVariations\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Carts\Users\**" />
+      <None Remove="OrderProducts\**" />
+      <None Remove="CategoryVariations\**" />
+      <None Remove="ProductVariations\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\InternetShop.Database\InternetShop.Database.csproj" />
+    </ItemGroup>
+
+</Project>

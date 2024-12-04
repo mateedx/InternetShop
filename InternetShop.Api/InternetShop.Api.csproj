@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.10" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.8"/>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0"/>
+        <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="7.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="InternetShop.Api.http" />
+      <None Remove="Extensions\Utils\**" />
+      <None Remove="Services\**" />
+      <None Remove="Contracts\Login\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\InternetShop.Services\InternetShop.Services.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Contracts\UpdateDataRequest.cs" />
+      <Compile Remove="Extensions\Utils\**" />
+      <Compile Remove="Services\**" />
+      <Compile Remove="Controllers\AuthController.cs" />
+      <Compile Remove="Contracts\Login\LoginResponse.cs" />
+      <Compile Remove="Contracts\Login\**" />
+      <Compile Remove="Contracts\Users\CreateUserResponce.cs" />
+      <Compile Remove="Contracts\Users\UpdateDataRequest.cs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Middlewares\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Extensions\Utils\**" />
+      <EmbeddedResource Remove="Services\**" />
+      <EmbeddedResource Remove="Contracts\Login\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Remove="Extensions\Utils\**" />
+      <Content Remove="Services\**" />
+      <Content Remove="Contracts\Login\**" />
+    </ItemGroup>
+
+</Project>
